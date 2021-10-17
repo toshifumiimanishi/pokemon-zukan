@@ -2,9 +2,17 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { configureStore } from '@reduxjs/toolkit';
+import { pokemonsSlice } from '../features/pokemons';
+import { Provider } from 'react-redux';
+
+const store = configureStore({
+  reducer: pokemonsSlice.reducer,
+});
 
 const Home: NextPage = () => {
   return (
+    <Provider store={store}>
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
@@ -66,6 +74,7 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </div>
+    </Provider>
   )
 }
 
