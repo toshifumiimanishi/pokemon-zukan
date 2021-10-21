@@ -4,3 +4,10 @@ export type Pokemon = {
 };
 
 export type Pokemons = Pokemon[];
+
+export type PokemonsGotten = {
+  count: number;
+  next: string;
+  previous: null | string;
+  results: Pokemons;
+};
