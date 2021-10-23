@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import { configureStore } from '@reduxjs/toolkit';
 import { pokemonsSlice } from '../features/pokemons';
 import { Provider } from 'react-redux';
@@ -30,8 +29,8 @@ const Home: NextPage = () => {
           />
         </Head>
 
-        <main className={styles.main}>
-          <h1 className={styles.title}>Welcome to Pokemon</h1>
+        <main className="flex flex-col items-center py-20">
+          <h1 className="mb-8 text-4xl">Welcome to the World of Pokemon</h1>
           <PokemonList />
         </main>
       </div>
