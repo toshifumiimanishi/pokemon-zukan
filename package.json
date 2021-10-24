@@ -10,6 +10,7 @@
     "format": "prettier --write '{components,domains,features,hooks,pages,types}/**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "@aspida/axios": "^1.7.1",
     "@reduxjs/toolkit": "^1.6.2",
     "autoprefixer": "^10.3.7",
     "axios": "^0.23.0",
