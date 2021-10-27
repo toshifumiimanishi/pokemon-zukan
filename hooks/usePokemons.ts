@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { pokemonsSlice, PokemonsState } from '../features/pokemons';
 import { Pokemons } from '../types';
-import { getPokemons } from '../domains/pokemon/services/getPokemonList';
+import { getPokemons } from '../domains/pokemon/services/getPokemons';
 
 export const usePokemons = () => {
   const [isLoading, setIsLoading] = useState(false);
