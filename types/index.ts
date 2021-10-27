@@ -7,7 +7,7 @@ export type Pokemons = Pokemon[];
 
 export type PokemonsGotten = {
   count: number;
-  next: string;
-  previous: null | string;
+  next: string | null;
+  previous: string | null;
   results: Pokemons;
 };
