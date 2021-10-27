@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { pokemonsSlice, PokemonsState } from '../features/pokemons';
+import { fetchPokemons, PokemonsState } from '../features/pokemons';
 import { Pokemons } from '../types';
-import { getPokemons } from '../domains/pokemon/services/getPokemons';
 
 export const usePokemons = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,11 +14,9 @@ export const usePokemons = () => {
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
   useEffect(() => {
-    const { pokemonsGotten } = pokemonsSlice.actions;
     const load = async () => {
       setIsLoading(true);
-      const pokemons = await getPokemons();
-      dispatch(pokemonsGotten({ pokemons }));
+      await dispatch(fetchPokemons());
       setIsLoading(false);
     };
 
